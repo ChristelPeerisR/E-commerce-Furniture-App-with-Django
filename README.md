@@ -38,7 +38,16 @@ EMAIL_HOST_PASSWORD = 'your email password'
 EMAIL_RECEIVING_USER = 'youremail@gmail.com'
 
 CHANGES REQUIRED FOR DATABASE MANAGEMENT
-In settins.py file, You have to give your username and 
+In settins.py file, You have to give your username and password
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'DB Name',
+        'USER':'postgres',
+        'PASSWORD':'Ypur password',
+        'HOST':'localhost'
+    }
+}
 
 ## Contact & Feedback
 Email: christelpeeris@gmail.com
