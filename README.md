@@ -25,11 +25,13 @@ https://github.com/ChristelPeerisR/E-commerce-Furniture-App-with-Django/assets/8
 Open Terminal and Execute Following Commands :
 ```bash
 python -m pip install -r requirements. txt
+exit
 - Move to project folder in Terminal. Then run following Commands :
 ```bash
 py manage.py makemigrations
 py manage.py migrate
 py manage.py runserver
+exit
 Now enter following URL in Your Browser Installed On Your Pc
 http://127.0.0.1:8000/
 
