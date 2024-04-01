@@ -6,11 +6,11 @@ https://github.com/ChristelPeerisR/E-commerce-Furniture-App-with-Django/assets/8
 
 ## Functions
 
-## Admin
+### Admin
 - Create Admin account and Login.
 - Can add new products, blogs and all required models.
 
-## User
+### User
 - Create user login (User will receive confirmation mail).
 - Can add products to cart.
 - Can filter products upon its's category, min-max price and offers.
@@ -20,28 +20,33 @@ https://github.com/ChristelPeerisR/E-commerce-Furniture-App-with-Django/assets/8
 - Can read Blogs.
 
 ## HOW TO RUN THIS PROJECT
-- Install Python(3.7.6) (Dont Forget to Tick Add to Path while installing Python)
-- Download This Project Zip Folder and Extract it
-Open Terminal and Execute Following Commands :
-```bash
-python -m pip install -r requirements. txt
-exit
-- Move to project folder in Terminal. Then run following Commands :
-```bash
+
+### Prerequisites
+- Python 3.7.6 installed (Ensure to select "Add to Path" during installation)
+
+### Steps
+1. Download the project ZIP folder and extract it.
+2. Open your terminal or command prompt.
+
+3. Install project dependencies by executing the following command:
+
+python -m pip install -r requirements.txt
+cd path/to/project/folder
 py manage.py makemigrations
 py manage.py migrate
 py manage.py runserver
-exit
-Now enter following URL in Your Browser Installed On Your Pc
+Once the server is running, open your web browser and enter the following URL:
 http://127.0.0.1:8000/
 
-CHANGES REQUIRED FOR CONTACT US PAGE
+These instructions provide clearer steps, organize the commands logically, and include a section on prerequisites for better understanding.
+
+### CHANGES REQUIRED FOR CONTACT US PAGE
 In settins.py file, You have to give your email and password
 EMAIL_HOST_USER = 'youremail@gmail.com'
 EMAIL_HOST_PASSWORD = 'your email password'
 EMAIL_RECEIVING_USER = 'youremail@gmail.com'
 
-CHANGES REQUIRED FOR DATABASE MANAGEMENT
+### CHANGES REQUIRED FOR DATABASE MANAGEMENT
 In settins.py file, You have to give your username and password
 DATABASES = {
     'default': {
