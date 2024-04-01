@@ -7,27 +7,27 @@ https://github.com/ChristelPeerisR/E-commerce-Furniture-App-with-Django/assets/8
 ## Functions
 
 ## Admin
-Create Admin account and Login.
-Can add new products, blogs and all required models.
+- Create Admin account and Login.
+- Can add new products, blogs and all required models.
 
 ## User
-Create user login (User will receive confirmation mail).
-Can add products to cart.
-Can filter products upon its's category, min-max price and offers.
-Can search for paticular products.
-Can send message to the admin using. 
-Can view Gallery.
-Can read Blogs.
+- Create user login (User will receive confirmation mail).
+- Can add products to cart.
+- Can filter products upon its's category, min-max price and offers.
+- Can search for paticular products.
+- Can send message to the admin using. 
+- Can view Gallery.
+- Can read Blogs.
 
 ## HOW TO RUN THIS PROJECT
-Install Python(3.7.6) (Dont Forget to Tick Add to Path while installing Python)
-Download This Project Zip Folder and Extract it
+- Install Python(3.7.6) (Dont Forget to Tick Add to Path while installing Python)
+- Download This Project Zip Folder and Extract it
 Open Terminal and Execute Following Commands :
-python -m pip install -r requirements. txt
-Move to project folder in Terminal. Then run following Commands :
-py manage.py makemigrations
-py manage.py migrate
-py manage.py runserver
+- python -m pip install -r requirements. txt
+- Move to project folder in Terminal. Then run following Commands :
+- py manage.py makemigrations
+- py manage.py migrate
+- py manage.py runserver
 Now enter following URL in Your Browser Installed On Your Pc
 http://127.0.0.1:8000/
 
