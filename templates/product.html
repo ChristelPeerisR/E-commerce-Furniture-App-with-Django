@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% static 'img' as baseUrl %}
+
+    
+    <main class="contenido-principal contenedor ">
+        <h2 class="text-center">Filtered Products</h2>
+        <form class="pad" method="GET" action="{% url 'product' %}">
+            <select class='input-fil' name="category" required/>
+                <option value="">All Categories</option>
+                <option value="Bed">Bed</option>
+                <option value="Sofa">Sofa</option>
+                <option value="Table">Table</option>
+                <option value="Dinnig">Dinning</option>
+                <option value="Living Room">Living Room</option>
+                <option value="Bed Room">Bed Room</option>
+                <!-- Add more categories as needed -->
+            </select>
+            <input class='input-fil' type="number" name="min_price" placeholder="Min Price 2000" />
+            <input class='input-fil' type="number" name="max_price" placeholder="Max Price 15000" />
+            <label for="offer">Filter by Offer:</label>
+            <input class='input-fill' type="checkbox" name="offer" id="offer" value="true" {% if request.GET.offer == 'true' %}checked{% endif %}>
+            <button type="submit">Filter</button>
+        </form>
+        
+        <div class="listado-productos" id="product-container">
+        {% if products %}    
+            {% for product in products %}
+            <div class="product-post">
+                <div clas='product'>
+                    {% if product.offer %}
+                        <div class="spec_offer text-center" style=''><a href="#" style='color: #fff;'>Special Offer</a></div>
+                    {% endif %}
+                    <img src="{{ product.img.url }}" alt="Imagen Producto" >
+                </div>
+
+                <div class="texto-producto">
+                    <h3>{{ product.title }}</h3>
+                    <p>{{ product.desc }}</p>
+                    <p class="precio">${{ product.price }}</p>
+                    {% if user.is_authenticated %}
+                    <a type='submit' class="btn" href="{% url 'add' product.id %}">Add to Cart</a>
+                    {% else %}
+                    <a type='submit' class="btn" href="{% url 'login' %}">Add to Cart</a>
+                    {% endif %}
+                </div> <!-- Info Producto -->
+            </div> <!-- Producto -->
+            {% endfor %}
+            {% else %}
+                <p>No Porducts available for applied filter!!</p>
+            {% endif %}
+
+        </div> <!-- Fin de Listado de Productos -->
+    </main>
+
+{% endblock content %}

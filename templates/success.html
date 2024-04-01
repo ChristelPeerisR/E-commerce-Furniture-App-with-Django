@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% static 'img' as baseUrl %} 
+
+    <main class="contenido-principal success contenedor ">
+        <h2 class="text-center">Message Sent Successfully!</h2>
+        <center>
+            <img class='send' src="{% static 'img/send.gif' %}"/>
+        </center>
+        <p>Thank you for contacting us. We will get back to you soon.</p>
+        <a href="{% url 'index' %}">Continue Shopping</a>
+    </main>
+
+{% endblock content %}

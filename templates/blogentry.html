@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% static 'img' as baseUrl %}
+
+    
+    <main class="contenido-principal contenedor ">
+        {% for blog in blogs %}
+        <h2 class="text-center">{{ blog.title }}</h2>
+
+        <article class="entrada contenido-entrada-blog">
+            <div class="imagen">
+                <img src="{{ blog.img.url }}" alt="imagen blog">
+            </div>
+
+            <div class="contenido-blog">
+            <div class="entrada-meta">
+                <p>Date: <span>{{ blog.date }}</span> </p>
+                <p>Writter: <span>{{ blog.writter }}</span> </p>
+            </div>
+
+            <div class="entrada-blog">
+                <p>{{ blog.desc }}</p>
+            </div>
+        </div>
+        </article>
+        {% endfor %}
+        
+    </main>
+
+{% endblock content %}

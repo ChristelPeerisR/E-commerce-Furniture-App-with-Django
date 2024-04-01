@@ -1,0 +1,101 @@
+{% load static %} {% static 'img' as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Furniture Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/app.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
+  </head>
+  <body>
+    <header>
+      <h1 class="nombre-sitio">Furniture <span> Store </span></h1>
+    </header>
+
+    <div class="contenedor-navegacion">
+      <nav class="nav-principal contenedor">
+        <ul class="nav-links">
+          <li class="nav-link"><a href="{% url 'index' %}">Platfrom</a></li>
+          <li class="nav-link"><a href="{% url 'store' %}">Store</a></li>
+          <li class="nav-link"><a href="{% url 'blog' %}">Blog</a></li>
+          <li class="nav-link"><a href="{% url 'gallery' %}">Gallery</a></li>
+          {% if user.is_authenticated %}
+          <li class="nav-link"><a href="{% url 'view_cart' %}">Cart</a></li>
+          {% else %}
+          <li class="nav-link"><a href="{% url 'login' %}">Cart</a></li>
+          {% endif %}
+          <li class="nav-link"><a href="{% url 'contact' %}">Contact</a></li>
+          {% if user.is_authenticated %}
+          <li class="nav-link">
+            Hello, {{user.username}} | <a href="{% url 'logout' %}"> Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-link">
+            <a href="{% url 'login' %}">Login </a>|
+            <a href="{% url 'signup' %}"> Signup</a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+
+    {% block content %} {% endblock content%}
+
+    <footer class="site-footer">
+      <div class="grid-footer contenedor">
+        <div>
+          <h3>Categories</h3>
+          <nav class="footer-menu">
+            <a href="#">Kitchen</a>
+            <a href="#">Office</a>
+            <a href="#">Garden</a>
+            <a href="#">Garage</a>
+            <a href="#">Bedrooms</a>
+          </nav>
+        </div>
+
+        <div>
+          <h3>About us</h3>
+          <nav class="footer-menu">
+            <a href="#">Our history</a>
+            <a href="#">Mission, vision and values</a>
+            <a href="#">Careers</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </nav>
+        </div>
+
+        <div>
+          <h3>Medium</h3>
+          <nav class="footer-menu">
+            <a href="#">Frequent questions</a>
+            <a href="#">Online help</a>
+            <a href="#">Trust and Security</a>
+          </nav>
+        </div>
+      </div>
+
+      <p class="copyright">All rights reserved, Christel Peeris</p>
+    </footer>
+  </body>
+</html>

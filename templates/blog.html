@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% static 'img' as baseUrl %}
+
+    <main class="contenido-principal contenedor ">
+        <h2 class="text-center">Our blog</h2>
+
+        <section class="contenedor-blog">
+            <div class="blog">
+
+                <article class="entrada">
+                    {% for blog in blogs %}
+                    {% if forloop.counter < 3 %}
+                    <h2>{{ blog.title }}</h2>
+
+                    <div class="imagen">
+                        <img src="{{ blog.img.url }}" alt="imagen blog">
+                    </div>
+
+                    <div class="contenido-blog">
+                        <div class="entrada-meta">
+                            <p>Date: <span>{{ blog.date }}</span> </p>
+                            <p>Written by: <span>{{ blog.writter }}</span> </p>
+                        </div>
+
+                        <div class="entrada-blog">
+                            <p>{{ blog.desc }}</p>
+                        </div>
+                        <a href="blog/blogentry/{{ blog.id }}" class="btn max-width-30">Read</a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+
+
+                </article>
+
+            </div>
+
+            <aside>
+                <h3>Other Blog Entries</h3>
+                <ul>
+                    {% for blog in blogs %}
+                        <li>
+                            <a href="blog/blogentry/{{blog.id}}">{{ blog.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </aside>
+        </section>
+    </main>
+
+{% endblock content %}

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% static 'img' as baseUrl %}
+
+{% if user.is_authenticated %}
+<p></p>
+{% else %}
+<div class='log'>
+    <h1>Signup to explore!!</h1>
+</div>
+{% endif %}
+
+<form class="formulario" action='signup' method='POST'>
+    {% csrf_token %}
+    <fieldset>
+        <legend>Sign up</legend>
+        
+        <div class="campo">
+            <label for="nombre">Username: </label>
+            <input class='input' id="nombre" type="text" name='username' placeholder="Enter Name" required>
+        </div>
+
+        <div class="campo">
+            <label for="nombre">Email: </label>
+            <input class='input' id="nombre" type="email" name='email' placeholder="Enter Email" required>
+        </div>
+
+        <div class="campo">
+            <label for="asunto">Password:</label>
+            <input class='input' id="asunto" type="password" name='password1' placeholder="Enter Password"  required>
+        </div>
+
+        <div class="campo">
+            <label for="asunto">Confirm Password:</label>
+            <input class='input' id="asunto" type="password" name='password2' placeholder="Re-Enter Password"  required>
+        </div>
+
+        <a href="{% url 'login' %}"> Already have an account?</a>
+    </fieldset>
+    <center>
+        <input class="btn" type="submit" value="SIGN UP" >
+        <div class="message">
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        </div>
+    </center>
+</form>
+
+{% endblock content %}

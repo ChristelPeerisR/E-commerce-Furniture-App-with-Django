@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% static 'img' as baseUrl %}
+
+
+    <div class="hero" id='search'>
+        <form class="form-inline" action="{% url 'search' %}" method='GET'>
+            {% csrf_token  %}
+            <div class='search'>
+                <input class='input-search' type='text' name='query' placeholder='Search Products ex: sofa, bed..' required/>
+                <button type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+
+    <section class="contenedor categorias">
+        <h2 class="text-center">Product Categories</h2>
+
+        <div class="listado-categorias">
+            {% for category in categorys %}
+                <div class="categoria">
+                    <img src="{{ category.img.url }}" alt="Imagen Categoría" />
+                    <a href="{% url 'store' %}">{{ category.title }}</a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+
+    <section class="sobre-nosotros">
+        <div class="contenedor sobre-nosotros-grid">
+            <div class="texto-nosotros">
+                <h2>About Us</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, voluptatum fugiat numquam sunt error, odit nostrum sed adipisci minima ipsum labore asperiores. Assumenda delectus necessitatibus iusto, dolore vel quod blanditiis!</p>
+            </div>
+        </div>
+    </section>
+    </main>
+
+{% endblock content %}

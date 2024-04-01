@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% static 'img' as baseUrl %}
+
+<main class="contenido-principal contenedor ">
+    <h2 class="text-center">Your Shopping Cart</h2>
+    
+    <div class="listado-productos">
+        {% for item in cart_items %}
+        <div class="store">
+            {% if item.product.offer %}
+                <div class="spec_offer text-center" style=''><a href="#" style='color: #fff;'>Special Offer</a></div>
+            {% endif %}
+            <img src="{{ item.product.img.url }}" alt="Imagen Producto" >
+
+            <div class="texto-producto">
+                <h3>{{ item.product.title }} ({{ item.quantity }})</h3>
+                <p>{{ item.product.desc }}</p>
+                <p class="precio">Price: ${{ item.product.price }}</p>
+                <a type='submit' class="btn" href="{% url 'remove' item.id %}">Remove From Cart</a>
+            </div> <!-- Info Producto -->
+        </div> <!-- Producto -->
+        <hr></hr>
+        {% empty %}
+        <p>Your cart is empty.</p>
+        {% endfor %}
+        <p>Total Price: ${{ total_price }}</p>
+        <a href="{% url 'store' %}">Continue Shopping</a>
+        <a type='submit' class="btn" href="#">Buy Now</a>
+
+    </div> <!-- Fin de Listado de Productos -->
+</main>    
+{% endblock content %}

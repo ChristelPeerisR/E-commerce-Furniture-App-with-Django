@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% static 'img' as baseUrl %}
+
+    
+    <main class="contenido-principal contenedor ">
+        <h2 class="text-center">Your Search Result for "{{ query }}":</h2>
+        
+        <div class="listado-productos">
+            {% for product in products %}
+            <div class="producto">
+                <div clas='product'>
+                    {% if product.offer %}
+                        <div class="spec_offer text-center" style=''><a href="#" style='color: #fff;'>Special Offer</a></div>
+                    {% endif %}
+                    <img src="{{ product.img.url }}" alt="Imagen Producto" >
+                </div>
+
+                <div class="texto-producto">
+                    <h3>{{ product.title }}</h3>
+                    <p>{{ product.desc }}</p>
+                    <p class="precio">${{ product.price }}</p>
+                    {% if user.is_authenticated %}
+                    <a type='submit' class="btn" href="{% url 'add' product.id %}">Add to Cart</a>
+                    {% else %}
+                    <a type='submit' class="btn" href="{% url 'login' %}">Add to Cart</a>
+                    {% endif %}
+                </div> <!-- Info Producto -->
+            </div> <!-- Producto -->
+            {% endfor %}
+
+        </div> <!-- Fin de Listado de Productos -->
+    </main>
+
+{% endblock content %}

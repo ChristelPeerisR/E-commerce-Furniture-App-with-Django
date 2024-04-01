@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% static 'img' as baseUrl %} 
+
+
+    <main class="contenido-principal contenedor ">
+        <h2 class="text-center">Contact</h2>
+
+        <form class="formulario" method='POST'>
+            <fieldset>
+                <legend>Send us your needs</legend>
+
+                {% csrf_token %}
+                {{ form.as_p }}   
+                
+            </fieldset>
+            <center>
+                <input class="btn" type="submit" value="SEND" >
+            </center>
+        </form>
+        
+    </main>
+
+{% endblock content %}
