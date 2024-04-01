@@ -31,9 +31,13 @@ https://github.com/ChristelPeerisR/E-commerce-Furniture-App-with-Django/assets/8
 3. Install project dependencies by executing the following command:
 ```
 python -m pip install -r requirements.txt
+```
 cd path/to/project/folder
+```
 py manage.py makemigrations
+```
 py manage.py migrate
+```
 py manage.py runserver
 ```
 Once the server is running, open your web browser and enter the following URL:
