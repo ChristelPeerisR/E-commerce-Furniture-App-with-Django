@@ -32,11 +32,15 @@ https://github.com/ChristelPeerisR/E-commerce-Furniture-App-with-Django/assets/8
 ```
 python -m pip install -r requirements.txt
 ```
+```
 cd path/to/project/folder
+```
 ```
 py manage.py makemigrations
 ```
+```
 py manage.py migrate
+```
 ```
 py manage.py runserver
 ```
