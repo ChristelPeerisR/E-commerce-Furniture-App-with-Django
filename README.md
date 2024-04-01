@@ -29,34 +29,37 @@ https://github.com/ChristelPeerisR/E-commerce-Furniture-App-with-Django/assets/8
 2. Open your terminal or command prompt.
 
 3. Install project dependencies by executing the following command:
-
+```
 python -m pip install -r requirements.txt
 cd path/to/project/folder
 py manage.py makemigrations
 py manage.py migrate
 py manage.py runserver
+```
 Once the server is running, open your web browser and enter the following URL:
+```
 http://127.0.0.1:8000/
+```
 
 These instructions provide clearer steps, organize the commands logically, and include a section on prerequisites for better understanding.
 
 ### CHANGES REQUIRED FOR CONTACT US PAGE
-In settins.py file, You have to give your email and password
-EMAIL_HOST_USER = 'youremail@gmail.com'
-EMAIL_HOST_PASSWORD = 'your email password'
-EMAIL_RECEIVING_USER = 'youremail@gmail.com'
+In settins.py file, You have to give your email and password<br>
+EMAIL_HOST_USER = 'youremail@gmail.com'<br>
+EMAIL_HOST_PASSWORD = 'your email password'<br>
+EMAIL_RECEIVING_USER = 'youremail@gmail.com'<br>
 
 ### CHANGES REQUIRED FOR DATABASE MANAGEMENT
-In settins.py file, You have to give your username and password
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'DB Name',
-        'USER':'postgres',
-        'PASSWORD':'Ypur password',
-        'HOST':'localhost'
-    }
-}
+In settins.py file, You have to give your username and password<br>
+DATABASES = {<br>
+    'default': {<br>
+        'ENGINE': 'django.db.backends.postgresql',<br>
+        'NAME': 'DB Name',<br>
+        'USER':'postgres',<br>
+        'PASSWORD':'Ypur password',<br>
+        'HOST':'localhost'<br>
+    }<br>
+}<br>
 
 ## Contact & Feedback
 Email: christelpeeris@gmail.com
