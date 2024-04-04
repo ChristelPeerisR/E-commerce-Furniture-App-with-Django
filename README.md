@@ -22,7 +22,7 @@ https://github.com/ChristelPeerisR/E-commerce-Furniture-App-with-Django/assets/8
 ## HOW TO RUN THIS PROJECT
 
 ### Prerequisites
-- Python 3.7.6 installed (Ensure to select "Add to Path" during installation)
+- Python 3.12.0 installed (Ensure to select "Add to Path" during installation)
 
 ### Steps
 1. Download the project ZIP folder and extract it.
